@@ -80,7 +80,7 @@ $(document).ready(function() {
 if($page!="confirm") {
 	getContent($page);
 }else {
-	if(executeForm()){
+	if(executeForm($_POST)){
 		getContent("confirm");
 	} else getContent("mailerror");
 
@@ -117,7 +117,8 @@ function getContent($page){
 	echo $row->www;	
 	mysql_close($link);
 }
-function executeForm(){
+
+function executeForm($order){
 	$mail = <<<EOS
 Dobrý den,
 
@@ -133,33 +134,33 @@ Tel.: +420 602 291 118
 Detaily rezervace:
 EOS;
 
-	$mail=$mail."\nJméno: ".$_POST['firstname']." ".$_POST['lastname']."\n";
-	$mail=$mail."Od: ".$_POST['from']." Do: ".$_POST['to']."\n";
-	$mail=$mail."Dospělých: ".$_POST['adults'].", Dětí: ".$_POST['childs'].", Osob ve stanech: ".$_POST['tents']."\n";
+	$mail=$mail."\nJméno: ".$order['firstname']." ".$order['lastname']."\n";
+	$mail=$mail."Od: ".$order['from']." Do: ".$order['to']."\n";
+	$mail=$mail."Dospělých: ".$order['adults'].", Dětí: ".$order['childs'].", Osob ve stanech: ".$order['tents']."\n";
 
 	$mail = $mail.<<<EOS
 Těšíme se na Vás.
 Penzion U dvou jelit.
 EOS;
-	//mail($_POST['email'],"Dvejelita.cz - Potvrzení rezervace ubytování",$mail);
-	$bool1=mail(trim($_POST['email']),"Dvejelita.cz - Potvrzení rezervace ubytování",$mail,"From: ubytovani@dvejelita.cz");
+	//mail($order['email'],"Dvejelita.cz - Potvrzení rezervace ubytování",$mail);
+	$bool1=mail(trim($order['email']),"Dvejelita.cz - Potvrzení rezervace ubytování",$mail,"From: ubytovani@dvejelita.cz");
 	
 	$mail = <<<EOS
 Následující osoba žádá rezervaci ubytování:
 
 EOS;
-	if ($_POST['breakfast']=="on") $breakfast="ano"; else $breakfast="ne";
-	$mail=$mail."\nJméno: ".$_POST['firstname']."\n";
-	$mail=$mail."Příjmení: ".$_POST['lastname']."\n";
-	$mail=$mail."Telefon: ".$_POST['phone']."\n";
-	$mail=$mail."Email: ".$_POST['email']."\n";
-	$mail=$mail."Od: ".$_POST['from']."\n";
-	$mail=$mail."Do: ".$_POST['to']."\n";
-	$mail=$mail."Dospělých: ".$_POST['adults']."\n";
-	$mail=$mail."Osob ve stanech: ".$_POST['tents']."\n";
-	$mail=$mail."Dětí: ".$_POST['childs']."\n";
+	if ($order['breakfast']=="on") $breakfast="ano"; else $breakfast="ne";
+	$mail=$mail."\nJméno: ".$order['firstname']."\n";
+	$mail=$mail."Příjmení: ".$order['lastname']."\n";
+	$mail=$mail."Telefon: ".$order['phone']."\n";
+	$mail=$mail."Email: ".$order['email']."\n";
+	$mail=$mail."Od: ".$order['from']."\n";
+	$mail=$mail."Do: ".$order['to']."\n";
+	$mail=$mail."Dospělých: ".$order['adults']."\n";
+	$mail=$mail."Osob ve stanech: ".$order['tents']."\n";
+	$mail=$mail."Dětí: ".$order['childs']."\n";
 	$mail=$mail."Snídaně: ".$breakfast."\n";
-	$mail=$mail."Poznámka: ".$_POST['note']."\n";
+	$mail=$mail."Poznámka: ".$order['note']."\n";
 	
 	$bool2=mail("ubytovani@dvejelita.cz","Dvejelita.cz - Žádost o rezervaci",$mail,"From: ubytovani@dvejelita.cz");
 	
