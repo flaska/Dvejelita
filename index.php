@@ -30,31 +30,9 @@
 	<?php } ?>
 	
 	<?php if ($page=="kontakt") { ?>
-	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.13/jquery-ui.min.js"></script>
-	<script type="text/javascript">
-
-	</script>
-<script type="text/javascript">
-function computePrice(){
-	var price;
-	var adults=parseInt($("#adults").val());
-	var childs=parseInt($("#childs").val());
-	var tents=parseInt($("#tents").val());
-	var from=$("#from").val();
-	var to=$("#to").val();
-	price=adults*200+childs*100+tents*50;
-	alert(from);
-}
-
-$(document).ready(function() {
-	$("input[type='text']").change( function() {
-	 computePrice();
-	});
-});
-
-</script>
-<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.13/themes/base/jquery-ui.css" type="text/css" media="all" /> 
-<link rel="stylesheet" href="http://static.jquery.com/ui/css/demo-docs-theme/ui.theme.css" type="text/css" media="all" /> 
+		<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.13/jquery-ui.min.js"></script>
+		<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.13/themes/base/jquery-ui.css" type="text/css" media="all" /> 
+		<link rel="stylesheet" href="http://static.jquery.com/ui/css/demo-docs-theme/ui.theme.css" type="text/css" media="all" /> 
 	<?php } ?>
 	
     <!--[if IE 6]>
@@ -80,10 +58,11 @@ $(document).ready(function() {
 if($page!="confirm") {
 	getContent($page);
 }else {
-	if(executeForm($_POST)){
+	if ((include './execute_form.php') != 1){
+		getContent("mailerror");
+	} else if (executeForm($_POST)){
 		getContent("confirm");
-	} else getContent("mailerror");
-
+	}
 }
 
 
@@ -116,55 +95,5 @@ function getContent($page){
 	$row = mysql_fetch_object($result);
 	echo $row->www;	
 	mysql_close($link);
-}
-
-function executeForm($order){
-	$mail = <<<EOS
-Dobrý den,
-
-vaše žádost o rezervaci byla přijata.
-V nejbližší době budete kontaktováni
-pro potvrzení rezervace a upřesnění detailů.
-
-Pokud máte jakýkoliv dotaz neváhejte nás prosím kontaktovat:
-
-Email: ubytovani@dvejelita.cz
-Tel.: +420 602 291 118
-
-Detaily rezervace:
-EOS;
-
-	$mail=$mail."\nJméno: ".$order['firstname']." ".$order['lastname']."\n";
-	$mail=$mail."Od: ".$order['from']." Do: ".$order['to']."\n";
-	$mail=$mail."Dospělých: ".$order['adults'].", Dětí: ".$order['childs'].", Osob ve stanech: ".$order['tents']."\n";
-
-	$mail = $mail.<<<EOS
-Těšíme se na Vás.
-Penzion U dvou jelit.
-EOS;
-	//mail($order['email'],"Dvejelita.cz - Potvrzení rezervace ubytování",$mail);
-	$bool1=mail(trim($order['email']),"Dvejelita.cz - Potvrzení rezervace ubytování",$mail,"From: ubytovani@dvejelita.cz");
-	
-	$mail = <<<EOS
-Následující osoba žádá rezervaci ubytování:
-
-EOS;
-	if ($order['breakfast']=="on") $breakfast="ano"; else $breakfast="ne";
-	$mail=$mail."\nJméno: ".$order['firstname']."\n";
-	$mail=$mail."Příjmení: ".$order['lastname']."\n";
-	$mail=$mail."Telefon: ".$order['phone']."\n";
-	$mail=$mail."Email: ".$order['email']."\n";
-	$mail=$mail."Od: ".$order['from']."\n";
-	$mail=$mail."Do: ".$order['to']."\n";
-	$mail=$mail."Dospělých: ".$order['adults']."\n";
-	$mail=$mail."Osob ve stanech: ".$order['tents']."\n";
-	$mail=$mail."Dětí: ".$order['childs']."\n";
-	$mail=$mail."Snídaně: ".$breakfast."\n";
-	$mail=$mail."Poznámka: ".$order['note']."\n";
-	
-	$bool2=mail("ubytovani@dvejelita.cz","Dvejelita.cz - Žádost o rezervaci",$mail,"From: ubytovani@dvejelita.cz");
-	
-	if ($bool1&&$bool2)$bool3=true; else $bool3=false;
-	return $bool3;
 }
 ?>
