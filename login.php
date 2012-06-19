@@ -3,6 +3,17 @@
 	<head>
 		<meta charset="UTF-8"/>
 		<style type="text/css">
+			html {
+				height: 100%;
+			}
+			body {
+				height: 100%;
+				margin: 0px 0px 0px 0px;
+			}
+			div#gap-before-main-content{
+				height: 150px;
+				background: url('images/headerbg.png') repeat-x;
+			}
 			div#main-content {
 				width: 30%;
 				min-width: 500px;
@@ -51,9 +62,24 @@
 				margin-left: auto;
 				margin-right: 0px;	
 			}
+			div#bottom-fill {
+				background-color: blue;
+			}
+			div#bottom-div {
+				position:absolute;
+				background-color: red;
+				width: 100%;
+				height: 101px;
+				background: url('images/footerbg.png') repeat-x;
+				bottom: 0px;
+				display: block;
+				margin-left: 0px;
+			}
 		</style>
 	</head>
 	<body>
+		<div id="gap-before-main-content">
+		</div>
 		<div id="main-content">
 			<h1>Administrátorské rozhraní stránek Dvejelita.cz</h1>
 			<h2>Pro vstup je potřeba se přihlásit.</h2>
@@ -62,6 +88,8 @@
 				<input type="text" class="form-element" name="password" />
 				<input id="submit" class="form-element" type="submit" value="Pokračovat" />
 			</form>
+		</div>
+		<div id="bottom-div">
 		</div>
 	</body>
 </html>
