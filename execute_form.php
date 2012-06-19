@@ -1,0 +1,54 @@
+<?php
+
+function executeForm($order){
+	$mail = <<<EOS
+Dobrý den,
+
+vaše žádost o rezervaci byla pøijata.
+V nejbližší dobì budete kontaktováni
+pro potvrzení rezervace a upøesnìní detailù.
+
+Pokud máte jakýkoliv dotaz neváhejte nás prosím kontaktovat:
+
+Email: ubytovani@dvejelita.cz
+Tel.: +420 602 291 118
+
+Detaily rezervace:
+EOS;
+
+	$mail=$mail."\nJméno: ".$order['firstname']." ".$order['lastname']."\n";
+	$mail=$mail."Od: ".$order['from']." Do: ".$order['to']."\n";
+	$mail=$mail."Dospìlých: ".$order['adults'].", Dìtí: ".$order['childs'].", Osob ve stanech: ".$order['tents']."\n";
+
+	$mail = $mail.<<<EOS
+Tìšíme se na Vás.
+Penzion U dvou jelit.
+EOS;
+
+	$bool1=mail(trim($order['email']),"Dvejelita.cz - Potvrzení rezervace ubytování",$mail,"From: ubytovani@dvejelita.cz");
+	
+	$mail = <<<EOS
+Následující osoba žádá rezervaci ubytování:
+
+EOS;
+
+	if (array_key_exists('breakfast',$order)) $breakfast="ano"; else $breakfast="ne";
+	$mail=$mail."\nJméno: ".$order['firstname']."\n";
+	$mail=$mail."Pøíjmení: ".$order['lastname']."\n";
+	$mail=$mail."Telefon: ".$order['phone']."\n";
+	$mail=$mail."Email: ".$order['email']."\n";
+	$mail=$mail."Od: ".$order['from']."\n";
+	$mail=$mail."Do: ".$order['to']."\n";
+	$mail=$mail."Dospìlých: ".$order['adults']."\n";
+	$mail=$mail."Osob ve stanech: ".$order['tents']."\n";
+	$mail=$mail."Dìtí: ".$order['childs']."\n";
+	$mail=$mail."Snídanì: ".$breakfast."\n";
+	$mail=$mail."Poznámka: ".$order['note']."\n";
+	
+	$bool2=mail("ubytovani@dvejelita.cz","Dvejelita.cz - Žádost o rezervaci",$mail,"From: ubytovani@dvejelita.cz");
+	
+	if ($bool1&&$bool2)$bool3=true; else $bool3=false;
+	return $bool3;
+}
+
+?>
