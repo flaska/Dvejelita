@@ -1,6 +1,7 @@
 <?php
 	if(!isset($_GET["page"])) $page="uvod";
 	else $page = $_GET["page"];	
+	require './getcontent.php';
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
@@ -46,7 +47,7 @@
     	<a id="logo" href="/"></a>
         <ul>
         	<li><a href="./index.php?page=uvod" <?php if ($page=="uvod") { ?> class="selected" <?php } ?>><em><b>Úvod</b></em></a></li>
-			<!--li><a href="./index.php?page=akce" <?php if ($page=="akce") { ?> class="selected" <?php } ?>><em><b>Akce!</b></em></a></li-->
+			<li><a href="./index.php?page=akce" <?php if ($page=="akce") { ?> class="selected" <?php } ?>><em><b>Akce!</b></em></a></li>
 	        <li><a href="./index.php?page=foto" <?php if ($page=="foto") { ?> class="selected" <?php } ?>><em><b>Fotogalerie</b></em></a></li>
 	        <li><a href="./index.php?page=tipy" <?php if ($page=="tipy") { ?> class="selected" <?php } ?>><em><b>Tipy v okolí</b></em></a></li>
 	        <li><a href="./index.php?page=kontakt" <?php if ($page=="kontakt") { ?> class="selected" <?php } ?>><em><b>Kontakt</b></em></a></li>
@@ -57,12 +58,12 @@
 <?php
 
 if($page!="confirm") {
-	getContent($page);
+	echo getContent($page);
 }else {
 	if ((include './execute_form.php') != 1){
-		getContent("mailerror");
+		echo getContent("mailerror");
 	} else if (executeForm($_POST)){
-		getContent("confirm");
+		echo getContent("confirm");
 	}
 }
 
@@ -85,20 +86,3 @@ if($page!="confirm") {
 </body>
 </html>
 
-<?php
-function getContent($page){
-	$pages = array('uvod' => 1, 'akce' => 1, 'foto' => 1, 'tipy' => 1, 'kontakt' => 1, 'confirm' => 1, 'mailerror' => 1);
-	if (!array_key_exists($page, $pages)) {
-		$page = 'uvod';
-	}
-	$link = mysql_connect('localhost', 'dvejelita_cz', '860128');
-	mysql_set_charset('utf8',$link);
-	mysql_select_db('dvejelita_cz_', $link);
-	echo mysql_error();
-	$query = "SELECT www FROM content WHERE tid='$page'";
-	$result = mysql_query($query);
-	$row = mysql_fetch_object($result);
-	echo $row->www;	
-	mysql_close($link);
-}
-?>

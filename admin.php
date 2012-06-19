@@ -1,30 +1,51 @@
 <?php
-
-$link = mysql_connect('localhost', 'dvejelita_cz', '860128');
-mysql_set_charset('utf8',$link);
-mysql_select_db('dvejelita_cz_', $link);
-echo mysql_error();
-$query = "SELECT www FROM content WHERE tid='admin-login'";
-$result = mysql_query($query);
-$row = mysql_fetch_object($result);
-$login = $row->www;	
-mysql_close($link);
-
-
+include './getcontent.php';
 session_start();
-
 if(!isset($_POST['password'])&&!isset($_SESSION['logged'])){
-	echo $login;
+	$webpage_layout = getContent('admin-layout');
+	$login_form = getContent('admin-login');
+	$content = preg_replace("/<!-- CONTENT -->/", $login_form, $webpage_layout);
+	echo $content;
 	die();
 }
-
 if(isset($_POST['password'])&&$_POST['password']!='heslo'){
 	$error_message = "Zadali jste špatné heslo";
-	$login_error = preg_replace("/<!-- ERROR_MESSAGE -->/", $error_message, $login);
-	echo $login_error;
+	$webpage_layout = getContent('admin-layout');
+	$login_form = getContent('admin-login');
+	$content = preg_replace("/<!-- CONTENT -->/", $login_form, $webpage_layout);
+	$content = preg_replace("/<!-- ERROR_MESSAGE -->/", $error_message, $content);
+	echo $content;
 	die();
 }
+$_SESSION['logged']=true;
 
-echo 'succesfully logged';
+
+if (isset($_POST['content'])&&isset($_POST['name'])){
+	$name = $_POST['name'];
+	$content = $_POST['content'];
+	$query = "UPDATE content SET www='$content' WHERE tid='$name'";
+	
+	$link = mysql_connect('localhost', 'dvejelita_cz', '860128');
+	mysql_set_charset('utf8',$link);
+	mysql_select_db('dvejelita_cz_', $link);
+	echo mysql_error();
+	$result = mysql_query($query);
+	echo mysql_error();
+}
+
+
+
+
+$name = 'akce';
+$page_content = getContent($name);
+$webpage_layout = getContent('admin-layout');
+$edit_form = getContent('admin-edit');
+$webpage = preg_replace("/<!-- CONTENT -->/", $edit_form, $webpage_layout);
+$webpage = preg_replace("/<!-- PAGE_CONTENT -->/", $page_content, $webpage);
+$webpage = preg_replace("/<!-- NAME -->/", $name, $webpage);
+echo $webpage;
+
+
+
 
 
