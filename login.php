@@ -37,6 +37,7 @@
 				font-size:1em;
 				text-align: center;
 				color: #42210B;
+				margin-bottom: 0px;
 				font-style: italic;
 			}
 			form {
@@ -90,6 +91,13 @@
 				display: block;
 				margin-left: 0px;
 			}
+			div#error {
+				text-align: center;
+				color: red;
+				display: block;
+				height: 30px;
+			}
+
 		</style>
 	</head>
 	<body>
@@ -99,6 +107,7 @@
 		<div id="main-content">
 			<h1>Administrátorské rozhraní stránek Dvejelita.cz</h1>
 			<h2>Pro vstup je potřeba se přihlásit.</h2>
+			<div id="error"><!-- ERROR_MESSAGE --></div>
 			<form action="admin.php" method="post">
 				<label class="form-element">Zadejte heslo:</label>
 				<input type="password" class="form-element" name="password" />

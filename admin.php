@@ -19,8 +19,9 @@ if(!isset($_POST['password'])&&!isset($_SESSION['logged'])){
 }
 
 if(isset($_POST['password'])&&$_POST['password']!='heslo'){
-	echo 'Špatné heslo<br>';
-	echo $login;
+	$error_message = "Zadali jste špatné heslo";
+	$login_error = preg_replace("/<!-- ERROR_MESSAGE -->/", $error_message, $login);
+	echo $login_error;
 	die();
 }
 
