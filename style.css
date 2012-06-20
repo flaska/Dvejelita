@@ -29,11 +29,13 @@ html, body{font-family: Georgia, arial; background: url('images/headerbg.png') r
 	overflow: auto;
 	padding: 10px 10px 111px 10px;
 	margin: 0 auto 0 auto; /* the bottom margin is the negative value of the footer's height */ }
-#content h1{font-style: italic; font-size: 210%; margin: 25px 0 25px 0; font-weight: normal;}
+#content h1{font-style: italic; font-size: 210%; font-weight: normal; margin: 10px 0 10px 0;}
+#content h1.home{margin: 25px 0 25px 0;}
 
 #content p#reservation{background: url('images/button.png') repeat-x; height: 59px; width: 151px; float: right; cursor:pointer; text-decoration:none;color:#fff; margin: 10px 0 0 0; }
 
-#content p.home {color: #684d3c; line-height: 160%; margin: 0 0 20px 0}
+#content p{color: #684d3c; margin: 1px 0 0px 0}
+#content p.home {color: #684d3c; line-height: 17px; margin: 0 0 20px 0}
 #tipyLeft p {line-height: 160%;} 
 #content #homerotator{float: right; background: url('images/home-intro.png') no-repeat; width: 598px; height: 401px; margin: 0 0 0 30px;}
 #content #homerotator img{margin: 4px 0 0 4px;}
@@ -60,8 +62,11 @@ html, body{font-family: Georgia, arial; background: url('images/headerbg.png') r
 
 #content ul {
 	position: relative;
+	top: -10px;
 	left: -20px;
 }
+
+#content p.tipy {margin-bottom: 20px; display: block;}
 
 div.tipyImage{ width: 258px; height: 188px; background: url('images/tipy-podklad.png') no-repeat; margin: 4px 0 0 4px; }
 img.tipyImage{ width: 250px; height: 180px; margin: 4px 0 0 4px; }
@@ -71,8 +76,9 @@ img.foto{ width: 180px; height: 180px; margin: 4px 0 0 4px; }
 
 a:link, a:visited, a:hover, a:active { color: #f6916d; }
 
-h2 { margin: 30px 0px 7px 0px; font-weight: normal; font-style: italic; font-size: 200%;}
-h3 { margin: 30px 0px 7px 0px; font-weight: normal; font-size: 150%; }
+h2 { margin: 20px 0px 5px 0px; font-weight: normal; font-style: italic; font-size: 200%;}
+h3.tipy { margin: 10px 0px 0px 0px; font-weight: normal; font-size: 150%; }
+h3 { margin: 5px 0px 5px 0px; font-weight: normal; font-size: 150%; }
 
 /*           */
 #contactLeft{ float: left; width:300px  }
@@ -130,6 +136,10 @@ div#contact{
 	margin-left: auto;
 	margin-right: auto;
 }
+
+table {border-collapse:collapse;}
+table, td, th {border:1px solid #684d3c;}
+td {padding: 2px 3px 2px 3px;}
 
 
 
