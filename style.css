@@ -6,7 +6,7 @@
 
 html, body{font-family: Georgia, arial; background: url('images/headerbg.png') repeat-x; margin:0; padding:0; text-align:center; font-size: 100%; height: 100%; color: #000000;}
 
-#page{width: 968px; margin: auto; padding: auto; text-align:left;	min-height: 100%;}
+#page{width: 968px; margin: 0px auto 0px auto; padding: 0px 0px 0px 0px; text-align:left; min-height: 100%;}
 	
 #header{height: 150px;}
 #header a#logo{height: 122px; width: 277px; background: url('images/logo.png') no-repeat; float:left; margin: 10px 0 0 0;}
@@ -24,13 +24,14 @@ html, body{font-family: Georgia, arial; background: url('images/headerbg.png') r
 
 
 
-#content{color: #42210b; font-size: 80%;
-	min-height: 550px; padding-bottom: 60px;
-	margin: 0 0  -101px 0; /* the bottom margin is the negative value of the footer's height */ }
+#content{color: #42210b; font-size: 80%; width: 100%;
+	min-height: 550px; padding-bottom: 101px;
+	overflow: auto;
+	padding: 10px 10px 111px 10px;
+	margin: 0 auto 0 auto; /* the bottom margin is the negative value of the footer's height */ }
 #content h1{font-style: italic; font-size: 210%; margin: 25px 0 25px 0; font-weight: normal;}
 
-#content p#reservation{background: url('images/button.png') repeat-x; height: 59px; width: 151px; float: right; cursor:pointer; text-decoration:none;color:#fff; margin: -10px 0 0 0; }
-#tipyLeft p#reservation{margin: 10px 0 0 0; }
+#content p#reservation{background: url('images/button.png') repeat-x; height: 59px; width: 151px; float: right; cursor:pointer; text-decoration:none;color:#fff; margin: 10px 0 0 0; }
 
 #content p.home {color: #684d3c; line-height: 160%; margin: 0 0 20px 0}
 #tipyLeft p {line-height: 160%;} 
@@ -45,7 +46,7 @@ html, body{font-family: Georgia, arial; background: url('images/headerbg.png') r
 .submit-reserve:hover p{color: #efefef !important;}
 .submit-reserve span{text-transform: uppercase; display:block; font-size: 165%; :font-size: 169%; font-size: 169%\0/;}
 
-#footer{ clear:both; background: url('images/footerbg.png') repeat-x; height: 101px; width: 100%;}
+#footer{ clear:both; background: url('images/footerbg.png') repeat-x; height: 101px; width: 100%; margin-top: -101px; position: relative; margin-bottom: 0px; padding: 0 0 0 0;}
 #footer-cont{ background: url('images/footer-jelita.png') no-repeat 0 15px; height: 101px; width: 401px; margin: -10px auto auto auto; padding: auto; color: #42210b;}
 #footer-cont .footer-title{font-size: 120%; margin: 10px auto auto auto; :margin: 0 auto auto auto; padding-top: 15px;}
 #footer-cont .footer-text{font-size: 120%; margin: 0 0 0 55px; :margin: 0 0 0 50px; margin: 0 0 0 70px\0/; font-size: 70%; text-align: left; }
@@ -75,8 +76,8 @@ h3 { margin: 30px 0px 7px 0px; font-weight: normal; font-size: 150%; }
 
 /*           */
 #contactLeft{ float: left; width:300px  }
-#contactRight{ float: right; width: 360px }
-#contactBottom {clear:both; position: relative; top: 100px; }
+#contactRight{ float: right; width: 360px ; margin-bottom: 50px;}
+#contactBottom {clear:both; /*position: relative; top: 100px; */}
 
 fieldset#name{ float: left; width:260px; }
 fieldset#length{ float: right; width: 250px }
@@ -124,8 +125,8 @@ input.submit{
 
 div#contact{
 	width: 700px;
-	margin-top: 50px;
-	margin-bottom: 200px;
+	/*margin-top: 50px;*/
+	/*margin-bottom: 200px;*/
 	margin-left: auto;
 	margin-right: auto;
 }

@@ -72,7 +72,7 @@ if($page!="confirm") {
     </div>
 
 </div>
-<div id="push"></div>
+<!--div id="push"></div-->
 	<div id="footer">
         <div id="footer-cont">
         	<div class="footer-title">Penzion U dvou jelit</div>
