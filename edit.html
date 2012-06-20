@@ -1,0 +1,389 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+
+	<head>
+
+		<meta charset="UTF-8"/>
+
+		<style type="text/css">
+
+			html {
+
+				height: 100%;
+
+			}
+
+			body {
+
+				height: 100%;
+
+				margin: 0px 0px 0px 0px;
+
+				color: #42210B;
+
+				font-style: italic;
+
+			}
+
+			div#gap-before-main-content{
+
+				height: 150px;
+
+				
+
+			}
+
+			img#logo {
+
+				margin-left: 20%;
+
+				margin-right: auto;
+
+			}
+
+			div#main-content-login {
+
+				width: 30%;
+
+				min-width: 500px;
+
+				margin-left: auto;
+
+				margin-right: auto;
+
+				margin-top: 50px;
+
+			}
+
+			h1 {
+
+				font-size:1.5em;
+
+				text-align: center;
+
+				color: #42210B;
+
+				font-style: italic;
+
+			}
+
+			h2 {
+
+				font-size:1em;
+
+				text-align: center;
+
+				color: #42210B;
+
+				margin-bottom: 0px;
+
+				font-style: italic;
+
+			}
+
+			form.login{
+
+				width: 60%;
+
+				margin-left: auto;
+
+				margin-right: auto;
+
+				border-style: ridge;
+
+				border-width: 4px;
+
+				border-color: rgb(255,214,77);
+
+				padding: 10px 20px 10px 20px;
+
+				box-shadow: 3px 3px 5px 6px #ccc;
+
+			}
+
+			form.edit input{
+
+				width: 15%;
+
+				height: 30px;
+
+				/*margin-left: auto;
+
+				margin-right: auto;
+
+				display: block;*/
+
+				margin-bottom: 20px;
+
+				background-color: #ff3f3f;
+
+			}
+
+			form.edit{
+
+				width: 1010px;
+
+				height: 500px;
+
+				margin-top: 20px;
+
+				margin-left: auto;
+
+				margin-right: auto;
+
+				padding-left:0px;
+
+				padding-right:0px;
+
+				border-width: 1px;
+
+			}
+
+			form textarea {
+
+				/*width: 978px;
+
+				height: 450px;
+
+				margin-top: 20px;
+
+				margin-left: auto;
+
+				margin-right: auto;
+
+				padding-left:0px;
+
+				padding-right:0px;
+
+				border-width: 1px;*/
+
+			}
+
+			form .form-element {
+
+				width: 50%;
+
+				margin-left: 0px;
+
+				margin-right: 0px;
+
+				padding-left: 0px;
+
+				padding-right: 0px;
+
+				display: block;
+
+				margin-top: 5px;
+
+				margin-bottom: 5px;
+
+				padding-top: 2px;
+
+				padding-bottom: 2px;
+
+			}
+
+			form input {
+
+				border: 0px;
+
+				outline: 1px solid #006;
+
+				background-color: #f9e25e;
+
+				text-align: center;
+
+			}
+
+			form label{
+
+				float: left;
+
+				text-align: right;
+
+				width: 45%!important;
+
+				padding-right: 5%!important;
+
+			}
+
+			form input#submit {
+
+				margin-left: auto;
+
+				margin-right: 0px;	
+
+			}
+
+			div#bottom-fill {
+
+				background-color: blue;
+
+			}
+
+			div#bottom-div {
+
+				position:absolute;
+
+				background-color: red;
+
+				width: 100%;
+
+				height: 101px;
+
+				background: url('images/footerbg.png') repeat-x;
+
+				bottom: 0px;
+
+				display: block;
+
+				margin-left: 0px;
+
+			}
+
+			div#error {
+
+				text-align: center;
+
+				color: red;
+
+				display: block;
+
+				height: 30px;
+
+			}
+			
+
+body {background: url('images/headerbg.png') repeat-x;}
+			
+#gap-before-main-content {width: 1010px; margin-left: auto; margin-right: auto;}
+			
+			
+#gap-before-main-content ul{margin:113px 0 0 0; padding:0; list-style:none; float:right}
+#gap-before-main-content ul li{ margin:0; display:inline; padding:0; vertical-align:top}
+#gap-before-main-content ul li a{background:url(images/menu2_bg.png) top left repeat-x; color:#42210b; text-decoration:none; font-size: 95%; font-style:italic; text-transform:none; float:left; padding:0; margin: 4px 0 0 1px;} 
+#gap-before-main-content ul li a  b{background:url(images/menu2_left.png) left top no-repeat; display:block; font-weight:normal; padding:0 25px 0 25px; line-height:35px}
+#gap-before-main-content ul li a em{background:url(images/menu2_right.png) right top no-repeat; display:block; font-weight:normal; font-style:normal }
+
+#gap-before-main-content ul li a:hover, #gap-before-main-content ul li a.selected { text-decoration:none; background:url(images/menu_bg.png) top left repeat-x; margin: 0 0 0 1px;}
+#gap-before-main-content ul li a:hover b, #gap-before-main-content ul li a.selected b{ background:url(images/menu_left.png) left top no-repeat; line-height:42px}
+#gap-before-main-content ul li a:hover em, #gap-before-main-content ul li a.selected em{ background:url(images/menu_right.png) right top no-repeat;}
+
+
+
+		</style>
+
+		<script type="text/javascript" src="/ckeditor/ckeditor.js"></script>
+
+		<script type="text/javascript">
+
+			$(document).ready(function() {
+
+				if ($('#content').length > 0){
+
+
+
+CKEDITOR.config.colorButton_colors = 'FFA21E,FF3604,1E4CD3,079111';
+
+CKEDITOR.config.format_tags = 'p;h1;h2;h3';
+
+CKEDITOR.config.contentsCss = 'style.ckedit.css';
+
+
+
+CKEDITOR.config.toolbar_DJ =
+
+[
+
+
+
+	{ name: 'clipboard', items : [ 'Undo','Redo' ] },
+
+	{ name: 'paragraph', items : [ 'NumberedList','BulletedList','-','Outdent','Indent',
+
+	'-','JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock'] },
+
+	{ name: 'insert', items : [ 'Image','Smiley','Link','Table','HorizontalRule'] },
+
+	'/',
+
+	{ name: 'basicstyles', items : [ 'TextColor','Bold','Italic','Underline'] },
+
+	{ name: 'styles', items : [ 'Format','Font','FontSize','/','RemoveFormat'] }
+
+];
+
+					CKEDITOR.replace('content',{height: '600px', toolbar: 'DJ'});
+
+				}
+$('a#save').click(function() {
+	$('form.edit').submit();
+});
+
+onloadContent =  CKEDITOR.instances.content.getData().replace(/(\r\n|\n|\r)/gm,"").replace(/&nbsp;/gm,"");
+$(window).bind('beforeunload', function() {
+	var currContent = CKEDITOR.instances.content.getData().replace(/(\r\n|\n|\r)/gm,"").replace(/&nbsp;/gm,"");
+	if (onloadContent!=currContent)
+		return "Vaše úpravy na stránce nebyly uloženy.";
+});
+
+
+			});
+
+var onloadContent
+
+		</script>
+
+	</head>
+
+	<body>
+
+		<div id="gap-before-main-content">
+
+			<img id="logo" src="images/logo.png"/>
+
+			<ul class="menu">
+
+				<li class="menu"><a id="save" href="#">cddcddc<em><b>Uložit</b></em></a></li>
+
+				<li class="menu"><a><em><b>Nápověda</b></em></a></li>
+
+			</ul>
+
+		</div>
+
+		
+
+<form class="edit" action="./admin.php" method="post">
+
+<input type="submit" value="Uložit"/>
+
+<textarea id="content" name="content"><h1>
+
+	cem cdmcd cd;lmc d</h1>
+
+<p>
+
+	dksjmc dmcdsdc</p>
+
+<p>
+
+	c;dkms d;cdms cdrfnlerhjfeoihfre</p>
+
+</textarea>
+
+<input name="name" type="hidden" value="akce"/>
+
+</form>		
+
+		
+
+
+
+	</body>
+
+</html>

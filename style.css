@@ -1,6 +1,6 @@
 @charset "UTF-8";
 * {
-	margin: 0;
+	/*margin: 0;*/
 }
 .pngfix, #designarrows, #blocksNews, #blocksfooter, #blocksbg, #footer #partners, #detailpage #content-left .bonus-list .img {behavior: url(/js/iepngfix_tilebg.js); }
 
@@ -27,15 +27,15 @@ html, body{font-family: Georgia, arial; background: url('images/headerbg.png') r
 #content{color: #42210b; font-size: 80%; width: 100%;
 	min-height: 550px; padding-bottom: 101px;
 	overflow: auto;
-	padding: 10px 10px 111px 10px;
+	padding: 0px 10px 111px 10px;
 	margin: 0 auto 0 auto; /* the bottom margin is the negative value of the footer's height */ }
 #content h1{font-style: italic; font-size: 210%; font-weight: normal; margin: 10px 0 10px 0;}
-#content h1.home{margin: 25px 0 25px 0;}
+#content h1.home{margin: 20px 0 20px 0;}
 
 #content p#reservation{background: url('images/button.png') repeat-x; height: 59px; width: 151px; float: right; cursor:pointer; text-decoration:none;color:#fff; margin: 10px 0 0 0; }
 
-#content p{color: #684d3c; margin: 1px 0 0px 0}
-#content p.home {color: #684d3c; line-height: 17px; margin: 0 0 20px 0}
+#content p{margin: 1px 0 0px 0}
+#content p.home {line-height: 17px; margin: 0 0 20px 0}
 #tipyLeft p {line-height: 160%;} 
 #content #homerotator{float: right; background: url('images/home-intro.png') no-repeat; width: 598px; height: 401px; margin: 0 0 0 30px;}
 #content #homerotator img{margin: 4px 0 0 4px;}
@@ -60,7 +60,7 @@ html, body{font-family: Georgia, arial; background: url('images/headerbg.png') r
 #tipyLeft{ float: left; width:670px  }
 #tipyRight{ float: right; width: 260px; margin: 0 0 40px 0 }
 
-#content ul {
+#content ul.tipy {
 	position: relative;
 	top: -10px;
 	left: -20px;
