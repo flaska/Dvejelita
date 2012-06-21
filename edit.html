@@ -5,6 +5,10 @@
 
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.13/jquery-ui.min.js"></script>
+
+	<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.13/themes/base/jquery-ui.css" type="text/css" media="all" /> 
+
 	<head>
 
 		<meta charset="UTF-8"/>
@@ -21,6 +25,8 @@
 
 				height: 100%;
 
+				background: url('images/headerbg.png') repeat-x;
+
 				margin: 0px 0px 0px 0px;
 
 				color: #42210B;
@@ -33,7 +39,7 @@
 
 				height: 150px;
 
-				
+				background: url('images/headerbg.png') repeat-x;
 
 			}
 
@@ -256,30 +262,50 @@
 				height: 30px;
 
 			}
+
+
+
+			#gap-before-main-content {width: 1010px; margin-left: auto; margin-right: auto;}
+
 			
 
-body {background: url('images/headerbg.png') repeat-x;}
-			
-#gap-before-main-content {width: 1010px; margin-left: auto; margin-right: auto;}
-			
-			
-#gap-before-main-content ul{margin:113px 0 0 0; padding:0; list-style:none; float:right}
-#gap-before-main-content ul li{ margin:0; display:inline; padding:0; vertical-align:top}
-#gap-before-main-content ul li a{background:url(images/menu2_bg.png) top left repeat-x; color:#42210b; text-decoration:none; font-size: 95%; font-style:italic; text-transform:none; float:left; padding:0; margin: 4px 0 0 1px;} 
-#gap-before-main-content ul li a  b{background:url(images/menu2_left.png) left top no-repeat; display:block; font-weight:normal; padding:0 25px 0 25px; line-height:35px}
-#gap-before-main-content ul li a em{background:url(images/menu2_right.png) right top no-repeat; display:block; font-weight:normal; font-style:normal }
+			#gap-before-main-content ul.menuR{margin:113px 0 0 0; padding:0; list-style:none; float:right}
 
-#gap-before-main-content ul li a:hover, #gap-before-main-content ul li a.selected { text-decoration:none; background:url(images/menu_bg.png) top left repeat-x; margin: 0 0 0 1px;}
-#gap-before-main-content ul li a:hover b, #gap-before-main-content ul li a.selected b{ background:url(images/menu_left.png) left top no-repeat; line-height:42px}
-#gap-before-main-content ul li a:hover em, #gap-before-main-content ul li a.selected em{ background:url(images/menu_right.png) right top no-repeat;}
+			#gap-before-main-content ul li{ margin:0; display:inline; padding:0; vertical-align:top}
+
+			#gap-before-main-content ul li a{background:url(images/menu2_bg.png) top left repeat-x; color:#42210b; text-decoration:none; font-size: 95%; font-style:italic; text-transform:none; float:left; padding:0; margin: 4px 0 0 1px;} 
+
+			#gap-before-main-content ul li a  b{background:url(images/menu2_left.png) left top no-repeat; display:block; font-weight:normal; padding:0 25px 0 25px; line-height:35px}
+
+			#gap-before-main-content ul li a em{background:url(images/menu2_right.png) right top no-repeat; display:block; font-weight:normal; font-style:normal }
 
 
 
+
+
+
+
+			#gap-before-main-content ul li a:hover, #gap-before-main-content ul li a#akce { text-decoration:none; background:url(images/menu_bg.png) top left repeat-x; margin: 0 0 0 1px;}
+
+			#gap-before-main-content ul li a:hover b, #gap-before-main-content ul li a#akce b{ background:url(images/menu_left.png) left top no-repeat; line-height:42px}
+
+			#gap-before-main-content ul li a:hover em, #gap-before-main-content ul li a#akce em{ background:url(images/menu_right.png) right top no-repeat;}
+
+
+
+			#gap-before-main-content ul.menuL{margin:113px 0 0 0; padding:0; list-style:none; float:left}
+.ui-dialog { width: auto!important;}
 		</style>
 
 		<script type="text/javascript" src="/ckeditor/ckeditor.js"></script>
 
 		<script type="text/javascript">
+
+			$('a#save').click(function() {
+
+				$('form.edit').submit();
+
+			});
 
 			$(document).ready(function() {
 
@@ -287,54 +313,81 @@ body {background: url('images/headerbg.png') repeat-x;}
 
 
 
-CKEDITOR.config.colorButton_colors = 'FFA21E,FF3604,1E4CD3,079111';
+					CKEDITOR.config.colorButton_colors = 'FFA21E,FF3604,1E4CD3,079111';
 
-CKEDITOR.config.format_tags = 'p;h1;h2;h3';
+					CKEDITOR.config.format_tags = 'p;h1;h2;h3';
 
-CKEDITOR.config.contentsCss = 'style.ckedit.css';
-
-
-
-CKEDITOR.config.toolbar_DJ =
-
-[
+					CKEDITOR.config.contentsCss = 'style.ckedit.css';
 
 
 
-	{ name: 'clipboard', items : [ 'Undo','Redo' ] },
+					CKEDITOR.config.toolbar_DJ =
 
-	{ name: 'paragraph', items : [ 'NumberedList','BulletedList','-','Outdent','Indent',
+					[
 
-	'-','JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock'] },
 
-	{ name: 'insert', items : [ 'Image','Smiley','Link','Table','HorizontalRule'] },
 
-	'/',
+						{ name: 'clipboard', items : [ 'Undo','Redo' ] },
 
-	{ name: 'basicstyles', items : [ 'TextColor','Bold','Italic','Underline'] },
+						{ name: 'paragraph', items : [ 'NumberedList','BulletedList','-','Outdent','Indent',
 
-	{ name: 'styles', items : [ 'Format','Font','FontSize','/','RemoveFormat'] }
+						'-','JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock'] },
 
-];
+						{ name: 'insert', items : [ 'Image','Smiley','Link','Table','HorizontalRule'] },
+
+						'/',
+
+						{ name: 'basicstyles', items : [ 'TextColor','Bold','Italic','Underline'] },
+
+						{ name: 'styles', items : [ 'Format','Font','FontSize','/','RemoveFormat'] }
+
+					];
 
 					CKEDITOR.replace('content',{height: '600px', toolbar: 'DJ'});
 
 				}
-$('a#save').click(function() {
-	$('form.edit').submit();
-});
 
-onloadContent =  CKEDITOR.instances.content.getData().replace(/(\r\n|\n|\r)/gm,"").replace(/&nbsp;/gm,"");
-$(window).bind('beforeunload', function() {
-	var currContent = CKEDITOR.instances.content.getData().replace(/(\r\n|\n|\r)/gm,"").replace(/&nbsp;/gm,"");
-	if (onloadContent!=currContent)
-		return "Vaše úpravy na stránce nebyly uloženy.";
-});
+				$('a#save').click(function() {
 
+					pageSaved=1;
+
+					$('form.edit').submit();
+
+				});
+
+				$('a#help').click(function() {
+
+					$("div#help").dialog();
+
+				});
+
+				// Check for unsaved changes
+
+				onloadContent = CKEDITOR.instances.content.getData().replace(/&nbsp;/gm,"").replace(/\s/g,"").replace(/<(?:.|\n)*?>/gm, '')/*.length*/;
+
+				$(window).bind('beforeunload', function() {
+
+					var currContent = CKEDITOR.instances.content.getData().replace(/&nbsp;/gm,"").replace(/\s/g,"").replace(/<(?:.|\n)*?>/gm, '')/*.length*/;
+
+					if (onloadContent!=currContent&&pageSaved!=1)
+
+						return "Vaše úpravy na stránce nebyly uloženy.";
+
+				});
 
 			});
 
-var onloadContent
+			var onloadContent;
+
+			var pageSaved=0;
+
+			$(document).ready(function() {
+
+				if (0==1)
+
+					$("#dialog").dialog();
+
+			});
 
 		</script>
 
@@ -342,15 +395,29 @@ var onloadContent
 
 	<body>
 
+		<div style="display: none;" id="dialog" title="Uložení změn">
+
+			<p>Vaše úprave na stránce byly uloženy.</p>
+
+		</div>
+
 		<div id="gap-before-main-content">
 
 			<img id="logo" src="images/logo.png"/>
 
-			<ul class="menu">
+			<ul class="menuL">
 
-				<li class="menu"><a id="save" href="#">cddcddc<em><b>Uložit</b></em></a></li>
+				<li class="menu"><a id="save" href="#"><em><b>Uložit</b></em></a></li>
 
-				<li class="menu"><a><em><b>Nápověda</b></em></a></li>
+				<li class="menu"><a id="help" href="#"><em><b>Nápověda</b></em></a></li>
+
+			</ul>
+
+			<ul class="menuR">
+
+				<li class="menu"><a href="./admin.php?name=akce" id="akce"><em><b>Akce</b></em></a></li>
+
+				<li class="menu"><a href="./admin.php?name=jidelnicek" id="jidelnicek"><em><b>Jídelní lístek</b></em></a></li>
 
 			</ul>
 
@@ -360,7 +427,7 @@ var onloadContent
 
 <form class="edit" action="./admin.php" method="post">
 
-<input type="submit" value="Uložit"/>
+<!--input type="submit" value="Uložit"/-->
 
 <textarea id="content" name="content"><h1>
 
@@ -372,7 +439,15 @@ var onloadContent
 
 <p>
 
-	c;dkms d;cdms cdrfnlerhjfeoihfre</p>
+	c;dkms d;cdms cdrfnlerhjfeoihfreqcdkjndkjdnjdkn;kj nd ;kjsnd</p>
+
+<p>
+
+	&nbsp;</p>
+
+<p>
+
+	check it brocdndcjklcndjcdlkmdslk</p>
 
 </textarea>
 
@@ -384,6 +459,12 @@ var onloadContent
 
 
 
+
+
 	</body>
+
+
+
+
 
 </html>

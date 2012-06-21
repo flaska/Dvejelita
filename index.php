@@ -50,6 +50,7 @@
 			<li><a href="./index.php?page=akce" <?php if ($page=="akce") { ?> class="selected" <?php } ?>><em><b>Akce!</b></em></a></li>
 	        <li><a href="./index.php?page=foto" <?php if ($page=="foto") { ?> class="selected" <?php } ?>><em><b>Fotogalerie</b></em></a></li>
 	        <li><a href="./index.php?page=tipy" <?php if ($page=="tipy") { ?> class="selected" <?php } ?>><em><b>Tipy v okolí</b></em></a></li>
+			<li><a href="./index.php?page=jidelnicek" <?php if ($page=="jidelnicek") { ?> class="selected" <?php } ?>><em><b>Jídelní lístek</b></em></a></li>
 	        <li><a href="./index.php?page=kontakt" <?php if ($page=="kontakt") { ?> class="selected" <?php } ?>><em><b>Kontakt</b></em></a></li>
 		</ul>            
     </div>
