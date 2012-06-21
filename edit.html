@@ -294,7 +294,15 @@
 
 
 			#gap-before-main-content ul.menuL{margin:113px 0 0 0; padding:0; list-style:none; float:left}
-.ui-dialog { width: auto!important;}
+
+
+
+			.ui-dialog { width: auto!important;}
+
+			div#help {width: 900px!important;}
+
+
+
 		</style>
 
 		<script type="text/javascript" src="/ckeditor/ckeditor.js"></script>
@@ -319,6 +327,7 @@
 
 					CKEDITOR.config.contentsCss = 'style.ckedit.css';
 
+					CKEDITOR.config.entities_latin = false;
 
 
 					CKEDITOR.config.toolbar_DJ =
@@ -397,7 +406,7 @@
 
 		<div style="display: none;" id="dialog" title="Uložení změn">
 
-			<p>Vaše úprave na stránce byly uloženy.</p>
+			<p>Vaše úpravy na stránce byly uloženy.</p>
 
 		</div>
 
@@ -431,15 +440,7 @@
 
 <textarea id="content" name="content"><h1>
 
-	cem cdmcd cd;lmc d</h1>
-
-<p>
-
-	dksjmc dmcdsdc</p>
-
-<p>
-
-	c;dkms d;cdms cdrfnlerhjfeoihfreqcdkjndkjdnjdkn;kj nd ;kjsnd</p>
+	<strong>Chyst&aacute;me U dvou jelit</strong></h1>
 
 <p>
 
@@ -447,7 +448,101 @@
 
 <p>
 
-	check it brocdndcjklcndjcdlkmdslk</p>
+	<strong><img alt="" src="https://www.synottip.cz/Skins/Default/images/synottip-screen-logo.png" style="width: 100px; height: 100px; " /><img alt="" src="http://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Football_iu_1996.jpg/300px-Football_iu_1996.jpg" style="float: right; width: 280px; height: 194px; " /></strong></p>
+
+<h3>
+
+	<strong>S&aacute;zky na sportovn&iacute; utk&aacute;n&iacute;!</strong></h3>
+
+<p>
+
+	Od 26. června je možn&eacute; u n&aacute;s s&aacute;zet na <u>sportovn&iacute; utk&aacute;n&iacute;</u> prostřednictv&iacute;m termin&aacute;lu <strong>SYNOT</strong><em>tip</em>.</p>
+
+<p>
+
+	Lze s&aacute;zet na v&scaron;echna sportovn&iacute; utk&aacute;n&iacute; uveden&aacute; na internetov&yacute;ch str&aacute;nk&aacute;ch s&aacute;zkov&eacute; kancel&aacute;ře&nbsp;<a href="https://www.synottip.cz/">https://www.synottip.cz/</a>.</p>
+
+<p>
+
+	&nbsp;</p>
+
+<p>
+
+	<img alt="" src="http://www.motorrota.cz/novinky/13motostouch1200.jpg" style="float: right; width: 300px; height: 424px; " /></p>
+
+<div>
+
+	&nbsp;</div>
+
+<p>
+
+	&nbsp;</p>
+
+<h3 style="font-size: 19px; line-height: normal; ">
+
+	<strong style="line-height: 17px; "><img alt="" src="http://i49.tinypic.com/30iw2li.png" style="width: 250px; height: 47px; " /></strong></h3>
+
+<h3>
+
+	<strong>MOTO&Scaron;ŤOUCH 201</strong><strong>2</strong></h3>
+
+<p>
+
+	O v&iacute;kendu <strong>6.-8.7.2012</strong> se ve Studnici kon&aacute;<strong> motork&aacute;řsk&yacute; sraz</strong>.</p>
+
+<p>
+
+	Souč&aacute;st&iacute; budou koncerty - např. <strong>KISS revival</strong>, <strong>KERN </strong>aj.</p>
+
+<p>
+
+	M&iacute;sto srazu je necel&yacute;ch <strong>5km</strong> od na&scaron;eho penzionu.</p>
+
+<p>
+
+	Nab&iacute;z&iacute;me ubytov&aacute;n&iacute; po dobu akce, a to buď v pokoji (200Kč/noc),</p>
+
+<p>
+
+	nebo ve stanu na zahradě (50Kč/noc) a zveme V&aacute;s na oběd či večeři</p>
+
+<p>
+
+	do na&scaron;&iacute; <strong>restaurace</strong>.</p>
+
+<p>
+
+	M&iacute;sto: <strong>Studnice, Letn&iacute; parket</strong></p>
+
+<div>
+
+	<br />
+
+	<p>
+
+		Vstupn&eacute; na akci: 250Kč/v&iacute;kend, 150Kč/den, 50Kč - odpoledn&iacute; vstupn&eacute;, děti do 120cm zdarma.</p>
+
+	<p>
+
+		&nbsp;</p>
+
+	<p>
+
+		V&iacute;ce informac&iacute; na str&aacute;nk&aacute;ch poř&aacute;daj&iacute;c&iacute;ho klubu MotorRota:&nbsp;<a href="http://www.motorrota.cz/">http://www.motorrota.cz/</a></p>
+
+	<p>
+
+		Fotky z minul&eacute;ho ročniku:&nbsp;<a href="http://www.motorrota.cz/galerie/foto/2011_motostouch/album/strana.html">http://www.motorrota.cz/galerie/foto/2011_motostouch/album/strana.html</a></p>
+
+	<p>
+
+		&nbsp;</p>
+
+</div>
+
+<p>
+
+	&nbsp;</p>
 
 </textarea>
 
@@ -463,7 +558,19 @@
 
 	</body>
 
+		<div id="help" title="Nápověda" style="display: none;">
 
+			<ul>
+
+				<li><h3>Jak se editor obsahu používá?</h3><p>V okně editoru lze libovolně upravovat obsah stránky. Po dokončení úprav je potřeba obsah uložit stisknutím příslušného tlačítka. Na pravé straně jsou tlačítka pro přepínání mezi dostupnými podstránkami.</p></li>
+
+				<li><h3>Jak změnit styl písma?</h3><p>V editoru jsou dva řádky tlačítek. Tlačítka ve spodním čádku slouží k úpravě stylu písma. Lze měnit: barvu písma, velikost písma, typ písma (font), dekoraci písma (tučně, kurzíva, podtrženě). Pro psaní nadpisů lze použít jednu ze tří definovaných variant. Pro odstranění stylu z písma je potřeba text označit a zmáčknout tlačítko s obrázkem gumy.</p></li>
+
+				<li><h3>Jak vložit obrázek?</h3><p>Editor umožňuje i vkládání obrázků do textu. Nejprve je potřeba obrázek nahrát na nějaký úložný prostor - například rajče.cz. Dále je potřeba znát adresu obrázku (vložený obrázek si najdeme v internetovém prohlížeči, klikneme pravým tlačítkem, dáme Vlastnosti a zjistíme adresu obrázku - URL). Poté stiskneme tlačítko "Obrázek" v editoru. Do políčka URL vložíme adresu obrázku. Pokud je obrázek veliký, lze zadat, jak široký chceme obrázek zobrazit na naší stránce - nejlépe 250 nebo 500 pixelů. Stisknutím "OK" vkládání ukončíme. Pokud je obrázek moc velký, lze jej upravit - stiskem pravého tlačítka a zvolením položky "Upravit obrázek".</p></li>
+
+			</ul>
+
+		</div>
 
 
 

@@ -8,7 +8,7 @@ if(!isset($_POST['password'])&&!isset($_SESSION['logged'])){
 	echo $content;
 	die();
 }
-if(isset($_POST['password'])&&$_POST['password']!='heslo'){
+if(isset($_POST['password'])&&$_POST['password']!='krejcar'){
 var_dump($_POST['password']);
 	$error_message = "Zadali jste špatné heslo";
 	$webpage_layout = getContent('admin-layout');
@@ -42,7 +42,9 @@ else $name = 'akce';
 $page_content = getContent($name);
 $webpage_layout = getContent('admin-layout');
 $edit_form = getContent('admin-edit');
+$menu = getContent('admin-menu');
 $webpage = preg_replace("/<!-- CONTENT -->/", $edit_form, $webpage_layout);
+$webpage = preg_replace("/<!-- MENU -->/", $menu, $webpage);
 $webpage = preg_replace("/<!-- PAGE_CONTENT -->/", $page_content, $webpage);
 $webpage = preg_replace("/<!-- NAME -->/", $name, $webpage);
 $webpage = preg_replace("/<!-- SAVED -->/", $pageSaved, $webpage);

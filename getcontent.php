@@ -1,6 +1,6 @@
 <?php
 function getContent($page){
-	$pages = array('uvod' => 1, 'akce' => 1, 'foto' => 1, 'tipy' => 1, 'kontakt' => 1, 'confirm' => 1, 'mailerror' => 1, 'admin-layout'=>1, 'admin-login' => 1, 'admin-edit'=>1, 'jidelnicek'=>1);
+	$pages = array('uvod' => 1, 'akce' => 1, 'foto' => 1, 'tipy' => 1, 'kontakt' => 1, 'confirm' => 1, 'mailerror' => 1, 'admin-layout'=>1, 'admin-menu'=>1, 'admin-login' => 1, 'admin-edit'=>1, 'jidelnicek'=>1);
 	if (!array_key_exists($page, $pages)) {
 		$page = 'uvod';
 	}
